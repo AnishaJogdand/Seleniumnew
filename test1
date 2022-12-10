@@ -1,0 +1,9 @@
+System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.google.com/");
+		driver.findElement(By.name("q")).click();
+		//List<WebElement> allsug= driver.findElements(By.xpath("//li[@class='sbct'  and not(@id='YMXe')]"));
+		List<WebElement> defaultsuggestion= driver.findElements(By.xpath("//li[@class='sbct'and not(@id='YMXe')]"));
+		int count = defaultsuggestion.size();
+		System.out.println(count);
